@@ -52,6 +52,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.newoether.agora.ui.settings.RatingForm
+import com.newoether.agora.newgpt.NewGptStudioScreen
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.newoether.agora.data.SettingsManager
@@ -317,6 +318,7 @@ fun MainNavigation(
     }
     var showSettings by rememberSaveable { mutableStateOf(false) }
     var showTasks by rememberSaveable { mutableStateOf(false) }
+    var showNewGptStudio by rememberSaveable { mutableStateOf(false) }
     val topLevelPresentation = remember {
         TopLevelPresentationState(
             initialOwner = when {
@@ -796,6 +798,31 @@ fun MainNavigation(
                 topLevelPresentation = topLevelPresentation.owner,
                 onSnackbarOffsetChanged = { chatSnackbarOffset = it }
             )
+
+            if (!showSettings && !showTasks && !showNewGptStudio) {
+                FloatingActionButton(
+                    onClick = { showNewGptStudio = true },
+                    modifier = Modifier
+                        .align(Alignment.BottomEnd)
+                        .padding(end = 18.dp, bottom = 104.dp),
+                    containerColor = Color(0xFFE1B84A),
+                    contentColor = Color(0xFF030304),
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.AutoAwesome,
+                        contentDescription = "NewGPT Studio",
+                    )
+                }
+            }
+
+            if (showNewGptStudio) {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = Color(0xFF030304),
+                ) {
+                    NewGptStudioScreen(onClose = { showNewGptStudio = false })
+                }
+            }
 
             SettingsOverlayHost(
                 visible = showSettings,

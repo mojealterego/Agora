@@ -88,6 +88,7 @@ class MainActivity : ComponentActivity() {
             SettingsManager(newBase).appLanguage.first()
         }
         val locale = when (langCode) {
+            "pl" -> java.util.Locale("pl", "PL")
             "zh" -> java.util.Locale("zh", "CN")
             "en" -> java.util.Locale("en")
             "es" -> java.util.Locale("es")

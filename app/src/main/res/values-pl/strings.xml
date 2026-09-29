@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NewGPT</string>
+    <string name="language_title">Język</string>
+    <string name="language_system_default">Domyślny systemu</string>
+</resources>

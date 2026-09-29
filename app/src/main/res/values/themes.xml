@@ -2,7 +2,7 @@
 <resources>
 
     <style name="Theme.Agora" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowBackground">@color/newgpt_obsidian</item>
         <item name="android:statusBarColor">@color/white</item>
     </style>
 

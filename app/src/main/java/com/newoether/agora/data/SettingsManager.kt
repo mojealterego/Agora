@@ -160,7 +160,7 @@ class SettingsManager(private val context: Context) {
     }
     val activeEmbeddingModelId: Flow<String> = context.dataStore.data.map { it[ACTIVE_EMBEDDING_MODEL_ID] ?: "" }
 
-    val appLanguage: Flow<String> = context.dataStore.data.map { it[APP_LANGUAGE] ?: "system" }
+    val appLanguage: Flow<String> = context.dataStore.data.map { it[APP_LANGUAGE] ?: "pl" }
     val webSearchEnabled: Flow<Boolean> = context.dataStore.data.map { it[WEB_SEARCH_ENABLED] ?: true }
     val webSearchProvider: Flow<String> = context.dataStore.data.map {
         normalizeWebSearchProvider(it[WEB_SEARCH_PROVIDER])
@@ -238,7 +238,7 @@ class SettingsManager(private val context: Context) {
     val sandboxSharedStorageEnabled: Flow<Boolean> =
         context.dataStore.data.map { it[SANDBOX_SHARED_STORAGE_ENABLED] ?: false }
 
-    val themeMode: Flow<String> = context.dataStore.data.map { it[THEME_MODE] ?: "FOLLOW_DEVICE" }
+    val themeMode: Flow<String> = context.dataStore.data.map { it[THEME_MODE] ?: "DARK" }
     val amoledEnabled: Flow<Boolean> = context.dataStore.data.map { it[AMOLED_ENABLED] ?: false }
     val colorScheme: Flow<String> = context.dataStore.data.map {
         it[COLOR_SCHEME] ?: DEFAULT_COLOR_SCHEME

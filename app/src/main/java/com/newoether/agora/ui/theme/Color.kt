@@ -11,9 +11,10 @@ import com.materialkolor.hct.Hct
 
 enum class SchemeStyle { TONAL_SPOT, EXPRESSIVE, VIBRANT, NEUTRAL }
 
-enum class ColorSchemePreset { MIDNIGHT, NORDIC, FOREST, SUNSET, ROSE, LAVENDER, SLATE, OCEAN }
+enum class ColorSchemePreset { NEWGPT, MIDNIGHT, NORDIC, FOREST, SUNSET, ROSE, LAVENDER, SLATE, OCEAN }
 
 private val seedColors = mapOf(
+    ColorSchemePreset.NEWGPT   to 0xFFE1B84A,
     ColorSchemePreset.MIDNIGHT to 0xFF1A237E,
     ColorSchemePreset.NORDIC   to 0xFF546E7A,
     ColorSchemePreset.FOREST   to 0xFF2E7D32,
